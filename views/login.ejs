@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Log in</title>
+<style>
+a:link, a:visited {
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+a:hover, a:active {
+    background-color: black;
+	color: white;
+}
+</style>
+</head>
+<body>
+
+	<fieldset>
+	<legend>Log in</legend>
+	<form action="/login" method="post">
+		Username:<br> <input type="text" name="name" required ><br>
+		Password:<br> <input type="password" name="password" ><br>
+	<BR>
+	
+	<input type="submit" value="Let's Go">
+	
+	<input type="reset" value="Reset">
+	<a href="create">Sign Up</a>
+	</form>
+	</legend>
+</body>
+</html>

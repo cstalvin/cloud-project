@@ -1,0 +1,56 @@
+<HTML>
+<head>
+<style>
+a:link, a:visited {
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+a:hover, a:active {
+    background-color: black;
+	color: white;
+}
+</style>
+</head>
+
+<BODY>
+
+<H1> Restaurants </H1>
+<H4> User: <font color="#ff0000"><%= n %></font> </H4>
+
+<form action="/search", method="post">
+	<fieldset>
+		<legend>Seacrh</legend>
+
+			Name:<br>
+			<input type="text" name="name" required><br>
+			
+			
+			<br>
+			<input type="submit" value="Search">
+
+	</fieldset>
+</form>
+
+
+
+<fieldset>
+	<legend>Showing <%= c.length %> Restaurants</legend>
+	<ol>
+	  <% c.forEach(function(product) { %>
+	  <li><a href=/showdetails?_id=<%= product._id %>?r><%= product.name %></a></li>
+	  <% });                        %>
+	</ol>
+</fieldset>
+
+   <p><a href="read">Back</a></p>
+
+</BODY></HTML>
+
+
+

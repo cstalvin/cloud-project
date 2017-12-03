@@ -1,0 +1,57 @@
+<HTML>
+<head>
+<title>welcome,<%= n %></title>
+
+<style>
+a:link, a:visited {
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+a:hover, a:active {
+    background-color: black;
+	color: white;
+}
+</style>
+</head>  
+
+<BODY>
+<script type="text/javascript">
+   if(window.location.href.substr(-2) !== "?r") {
+      window.location = window.location.href + "?r";
+    }
+</script>
+
+<H1> Restaurants </H1>
+<H4> User: <font color="#ff0000"><%= n %></font> </H4>
+
+ <p><a href="search">Search</a></p>
+
+
+<fieldset>
+	<legend>Showing <%= c.length %> Restaurants with photo</legend>
+<ol>
+  <% c.forEach(function(product) { %>
+  <li><a href=/showdetails?_id=<%= product._id %>><%= product.name %></a></li>
+  <% });                        %>
+</ol>
+</fieldset>
+
+
+
+ <p><a href="add">Add New Restaurant (with photo)</a></p>
+
+
+<form action="/logout" method="post">
+  
+   <input type="submit" value="Log Out">
+	
+</form>
+
+
+</BODY></HTML>
